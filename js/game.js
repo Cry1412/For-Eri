@@ -1431,7 +1431,7 @@ const animationTimeline = () => {
 	};
 	console.log(STAGE)
 
-		const tl = new TimelineMax({ delay: 30 });
+		const tl = new TimelineMax({ delay: 32 });
 
 		tl.to(".container", 0.1, {
 			visibility: "visible",
