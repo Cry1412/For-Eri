@@ -837,7 +837,7 @@ window.LEVEL_CONFIG = [
 			{x:0,y:150,radius:100},
 			{x:300,y:150,radius:100}
 		],
-		countdown: Infinity
+		countdown: 100
 	},
 		// HEART
 		{
@@ -1019,7 +1019,7 @@ window.LEVEL_CONFIG = [
 		],
 		// SUPER HACK - for level 2, change timer so it's impossible to beat if you go BACKWARDS.
 		// countdown: 200
-		countdown: Infinity
+		countdown: 300
 	},
 	//R
 	{
@@ -1362,7 +1362,7 @@ window.LEVEL_CONFIG = [
 		],
 		// SUPER HACK - for level 2, change timer so it's impossible to beat if you go BACKWARDS.
 		// countdown: 200
-		countdown: Infinity
+		countdown: 300
 	},
 	{
 		canvas:document.getElementById("canvas_5"),
@@ -1373,7 +1373,7 @@ window.LEVEL_CONFIG = [
 			{x:0,y:150,radius:100},
 			{x:300,y:150,radius:100}
 		],
-		countdown: Infinity
+		countdown: 100
 	},
 
 
@@ -1431,7 +1431,7 @@ const animationTimeline = () => {
 	};
 	console.log(STAGE)
 
-		const tl = new TimelineMax({ delay: 32 });
+		const tl = new TimelineMax({ delay: 31 });
 
 		tl.to(".container", 0.1, {
 			visibility: "visible",
