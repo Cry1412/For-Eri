@@ -611,12 +611,9 @@ window.onload = function () {
 				frameDirty = true;
 			}
 
-			if (STAGE == 3 && !window.HAS_PLAYED_JAZZ) {
-
-				if (STAGE == 3 && CURRENT_LEVEL == 4) {
+			if (STAGE == 3 && !window.HAS_PLAYED_JAZZ && CURRENT_LEVEL == 4) {
 						window.HAS_PLAYED_JAZZ = true;
 						createjs.Sound.play("jazz");
-				}
 
 			}
 
@@ -741,7 +738,7 @@ function iHeartYou() {
 	if (window.location.hash) {
 		vtext.textContent = encryptString(decodeURIComponent(window.location.hash).substring(1));
 	} else {
-		vtext.textContent = "a lovely message from me to you <3";
+		vtext.textContent = "";
 	}
 
 	setTimeout(function () {
@@ -752,7 +749,7 @@ function iHeartYou() {
 	// No replay. Fuck it.
 	setTimeout(function () {
 		document.getElementById("whole_container").style.top = "-200%";
-	}, 7300);
+	}, 8500);
 	setTimeout(function () {
 		yourMessage.focus();
 	}, 8500);
@@ -830,7 +827,7 @@ window.LEVEL_CONFIG = [
 	// I
 	{
 		canvas:document.getElementById("canvas_1"),
-		player:{ x:150, y:200 },
+		player:{ x:150, y:170 },
 		door:{ x:150, y:60 },
 		key:{ x:150, y:275 },
 		circles: [
@@ -1019,7 +1016,7 @@ window.LEVEL_CONFIG = [
 		],
 		// SUPER HACK - for level 2, change timer so it's impossible to beat if you go BACKWARDS.
 		// countdown: 200
-		countdown: 300
+		countdown: 200
 	},
 	//R
 	{
@@ -1362,11 +1359,11 @@ window.LEVEL_CONFIG = [
 		],
 		// SUPER HACK - for level 2, change timer so it's impossible to beat if you go BACKWARDS.
 		// countdown: 200
-		countdown: 300
+		countdown: 200
 	},
 	{
 		canvas:document.getElementById("canvas_5"),
-		player:{ x:150, y:200 },
+		player:{ x:150, y:170 },
 		door:{ x:150, y:60 },
 		key:{ x:150, y:275 },
 		circles: [
@@ -1431,12 +1428,12 @@ const animationTimeline = () => {
 	};
 	console.log(STAGE)
 
-		const tl = new TimelineMax({ delay: 26 });
+		const tl = new TimelineMax({ delay: 10.5 });
 
 		tl.to(".container", 0.1, {
 			visibility: "visible",
 		})
-			.from(".one", 0.7, {
+			.from(".one", 1.5, {
 				opacity: 0,
 				y: 10,
 			})
@@ -1446,7 +1443,7 @@ const animationTimeline = () => {
 			})
 			.to(
 				".one",
-				0.7,
+				1.5,
 				{
 					opacity: 0,
 					y: 10,
@@ -1710,7 +1707,7 @@ const animationTimeline = () => {
   const waitForStageToBeThree = () => {
 	const interval = setInterval(() => {
 		// Check if STAGE is 3
-		if (STAGE === 3) {
+		if (STAGE === 4) {
 			clearInterval(interval); // Stop checking once we get the desired stage
 			animationTimeline(); // Run the animation
 		}
